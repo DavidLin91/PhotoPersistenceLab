@@ -20,6 +20,7 @@
 		6397AA0A23D54B3900F28EB7 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397AA0923D54B3900F28EB7 /* Photos.swift */; };
 		6397AA0D23D54D1500F28EB7 /* PhotosAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397AA0C23D54D1500F28EB7 /* PhotosAPIClient.swift */; };
 		6397AA1023D54E5D00F28EB7 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397AA0F23D54E5D00F28EB7 /* PhotoCell.swift */; };
+		6397AA1423D615F400F28EB7 /* DetailedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397AA1323D615F400F28EB7 /* DetailedPhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6397AA0923D54B3900F28EB7 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		6397AA0C23D54D1500F28EB7 /* PhotosAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPIClient.swift; sourceTree = "<group>"; };
 		6397AA0F23D54E5D00F28EB7 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		6397AA1323D615F400F28EB7 /* DetailedPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		636C890823D5057E007D356F = {
 			isa = PBXGroup;
 			children = (
+				6397AA1323D615F400F28EB7 /* DetailedPhotoCell.swift */,
 				636C891323D5057E007D356F /* PhotoPersistenceLab */,
 				636C892A23D50582007D356F /* PhotoPersistenceLabTests */,
 				636C891223D5057E007D356F /* Products */,
@@ -254,6 +257,7 @@
 				6397AA1023D54E5D00F28EB7 /* PhotoCell.swift in Sources */,
 				636C891523D5057E007D356F /* AppDelegate.swift in Sources */,
 				636C891723D5057E007D356F /* SceneDelegate.swift in Sources */,
+				6397AA1423D615F400F28EB7 /* DetailedPhotoCell.swift in Sources */,
 				6397AA0D23D54D1500F28EB7 /* PhotosAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

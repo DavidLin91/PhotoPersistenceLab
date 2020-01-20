@@ -51,6 +51,19 @@ class SearchVC: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailedSearchVC = segue.destination as? SelectedPhotoDVC,
+            let indexPath = collectionView.indexPathsForSelectedItems?.first else {
+                fatalError()
+        }
+        let photo = photos[indexPath.row]
+        detailedSearchVC.detailedPhoto = photo
+    }
+    
+    
+    
+    
+    
 }
 
 extension SearchVC: UICollectionViewDataSource {

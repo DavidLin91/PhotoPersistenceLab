@@ -14,6 +14,7 @@ class PhotoCell: UICollectionViewCell {
     
     func updateUI(photo: Photos){
         let imageURL = photo.previewURL.description
+        print(imageURL)
         
         photoImage.getImage(with: imageURL) { (result) in
             switch result {
