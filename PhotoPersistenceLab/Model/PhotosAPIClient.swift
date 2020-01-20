@@ -11,7 +11,7 @@ import NetworkHelper
 
 
 struct PhotosAPIClient {
-    static func getPhotos(with search: String, completion: @escaping(Result<[AllPhotos], AppError>) -> ()) {
+    static func getPhotos(with search: String, completion: @escaping(Result<[Photos], AppError>) -> ()) {
         let endpointURLString = "https://pixabay.com/api/?key=14969843-2cae0700ee723f2830a9ec598&q=\(search)"
         
         guard let url = URL(string: endpointURLString) else {
@@ -24,9 +24,11 @@ struct PhotosAPIClient {
             case .failure(let appError):
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
+//                let printData = String(data: data, encoding: .utf8)
+//                print(printData)
                 do {
-                    let projects = try JSONDecoder().decode([AllPhotos].self, from: data)
-                    completion(.success(projects))
+                    let projects = try JSONDecoder().decode(AllPhotos.self, from: data)
+                    completion(.success(projects.hits))
                 } catch {
                     completion(.failure(.decodingError(error)))
                 }

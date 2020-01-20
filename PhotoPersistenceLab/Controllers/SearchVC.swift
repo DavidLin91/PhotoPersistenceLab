@@ -12,7 +12,7 @@ class SearchVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var photos = [AllPhotos]() {
+    var photos = [Photos]() {
         didSet{
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -20,7 +20,7 @@ class SearchVC: UIViewController {
         }
     }
     
-    var searchQuery = "Ramen"
+    var searchQuery = "sushi"
     
     override func viewDidLoad() {
         super.viewDidLoad()
