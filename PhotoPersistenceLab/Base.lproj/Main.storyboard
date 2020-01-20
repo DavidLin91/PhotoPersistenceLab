@@ -108,6 +108,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="favoriteButtonPressed:" destination="1aF-za-f9d" eventType="touchUpInside" id="6f4-i0-WD6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swZ-Wz-aYT">
                                 <rect key="frame" x="20" y="419" width="324" height="25.5"/>
@@ -127,22 +130,36 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="138" id="w5p-oH-DZy"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gSr-2G-RiL">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gSr-2G-RiL">
                                     <size key="itemSize" width="155" height="133"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailedPhotoCell" id="27Z-Ys-oOQ" customClass="PhotoCell" customModule="PhotoPersistenceLab" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailedPhotoCell" id="27Z-Ys-oOQ" customClass="DetailedCollectionViewCell" customModule="PhotoPersistenceLab" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="2.5" width="155" height="133"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fJ3-gK-9k4" customClass="DetailedPhotoCell" customModule="PhotoPersistenceLab" customModuleProvider="target">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fJ3-gK-9k4">
                                             <rect key="frame" x="0.0" y="0.0" width="155" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uAE-50-GgN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="155" height="133"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" red="0.92604565230000002" green="0.92604565230000002" blue="0.92604565230000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="uAE-50-GgN" firstAttribute="leading" secondItem="fJ3-gK-9k4" secondAttribute="leading" id="M24-gR-gMj"/>
+                                                <constraint firstItem="uAE-50-GgN" firstAttribute="top" secondItem="fJ3-gK-9k4" secondAttribute="top" id="OMP-sY-7XX"/>
+                                                <constraint firstAttribute="trailing" secondItem="uAE-50-GgN" secondAttribute="trailing" id="YmM-q8-XAp"/>
+                                                <constraint firstAttribute="bottom" secondItem="uAE-50-GgN" secondAttribute="bottom" id="ttL-N6-blV"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="155" height="133"/>
+                                        <connections>
+                                            <outlet property="photoImage" destination="uAE-50-GgN" id="jes-pr-VCK"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -289,6 +306,6 @@
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vIe-oW-Osi"/>
+        <segue reference="qMF-yp-pe9"/>
     </inferredMetricsTieBreakers>
 </document>

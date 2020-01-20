@@ -1,15 +1,15 @@
 //
-//  PhotoCell.swift
+//  DetailedCollectionViewCell.swift
 //  PhotoPersistenceLab
 //
-//  Created by David Lin on 1/19/20.
+//  Created by David Lin on 1/20/20.
 //  Copyright © 2020 David Lin (Passion Proj). All rights reserved.
 //
 
 import UIKit
 import ImageKit
 
-class PhotoCell: UICollectionViewCell {
+class DetailedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photoImage: UIImageView!
     
     func updateUI(photo: Photos){

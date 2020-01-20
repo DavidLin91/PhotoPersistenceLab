@@ -39,18 +39,7 @@ class SearchVC: UIViewController {
             }
         }
     }
-    
-    func loadData(search: String) {
-        PhotosAPIClient.getPhotos(with: search) { (result) in
-            switch result {
-            case .failure(let appError):
-                print("app error: \(appError)")
-            case .success(let data):
-                self.photos = data
-            }
-        }
-    }
-    
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailedSearchVC = segue.destination as? SelectedPhotoDVC,
             let indexPath = collectionView.indexPathsForSelectedItems?.first else {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ImageKit
 
 class SelectedPhotoDVC: UIViewController {
     @IBOutlet weak var largePhoto: UIImageView!
@@ -14,6 +15,7 @@ class SelectedPhotoDVC: UIViewController {
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var photoTags: UILabel!
     @IBOutlet weak var detailedCollectionView: UICollectionView!
+
     
     var detailedPhoto: Photos!
     
@@ -25,13 +27,13 @@ class SelectedPhotoDVC: UIViewController {
         }
     }
     
-    let searchQuery = "sushi"
+    let searchQueryDVC = "sushi"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //detailedCollectionView.dataSource = self
+      detailedCollectionView.dataSource = self
         updateUI()
-        loadData(search: searchQuery)
+        loadData(search: searchQueryDVC)
     }
     
     func loadData(search: String) {
@@ -62,19 +64,33 @@ class SelectedPhotoDVC: UIViewController {
             }
         }
     }
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+//        guard let favPhotos = detailedPhoto else {
+//            return
+//        }
+//    
+//        do {
+//            try 
+//        }
+        
+    }
+    
+    
+    
+    
 }
 
-//extension SelectedPhotoDVC: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        photos.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailedPhotoCell", for: indexPath) as? PhotoCell else {
-//            fatalError()
-//        }
-//        let photo = photos[indexPath.row]
-//        cell.updateUI(photo: photo )
-//        return cell
-//    }
-//}
+extension SelectedPhotoDVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        photos.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailedPhotoCell", for: indexPath) as? DetailedCollectionViewCell else {
+            fatalError()
+        }
+        let photo = photos[indexPath.row]
+        cell.updateUI(photo: photo )
+        return cell
+    }
+}
