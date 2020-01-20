@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q1s-2b-41H">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SearchVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchVC" customModule="PhotoPersistenceLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="7LI-iU-CW1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lBS-Ma-4gb">
+                                <rect key="frame" x="0.0" y="198" width="414" height="452"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83673727659999997" green="0.83673727659999997" blue="0.83673727659999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="exO-BU-EO9">
+                                    <size key="itemSize" width="200" height="187"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="r3e-tt-SY0" customClass="PhotoCell" customModule="PhotoPersistenceLab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ASh-pC-ezx">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dOi-KE-1Mc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="dOi-KE-1Mc" secondAttribute="trailing" id="EmT-4p-qLg"/>
+                                                <constraint firstAttribute="bottom" secondItem="dOi-KE-1Mc" secondAttribute="bottom" id="KXS-N9-tn8"/>
+                                                <constraint firstItem="dOi-KE-1Mc" firstAttribute="leading" secondItem="ASh-pC-ezx" secondAttribute="leading" id="lG5-0c-0Zv"/>
+                                                <constraint firstItem="dOi-KE-1Mc" firstAttribute="top" secondItem="ASh-pC-ezx" secondAttribute="top" id="qPE-d4-WbK"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="200" height="200"/>
+                                        <connections>
+                                            <outlet property="photoImage" destination="dOi-KE-1Mc" id="kLD-nz-QXf"/>
+                                            <segue destination="1aF-za-f9d" kind="show" id="qMF-yp-pe9"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7LI-iU-CW1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dmt-QA-45b"/>
+                            <constraint firstItem="7LI-iU-CW1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aAh-t5-oEf"/>
+                            <constraint firstItem="7LI-iU-CW1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ui0-f1-grQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fak-FM-YIl"/>
+                    <connections>
+                        <outlet property="collectionView" destination="lBS-Ma-4gb" id="kgZ-SP-mp1"/>
+                        <outlet property="searchBar" destination="7LI-iU-CW1" id="FzR-TR-rOC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2755.072463768116" y="112.5"/>
+        </scene>
+        <!--Selected PhotoVC-->
+        <scene sceneID="qGd-i8-eS0">
+            <objects>
+                <viewController id="1aF-za-f9d" customClass="SelectedPhotoVC" customModule="PhotoPersistenceLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SXv-XD-L67">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="sfH-AP-o2K"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XJ0-Um-02d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iuq-dz-rhD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4539.130434782609" y="387.72321428571428"/>
+        </scene>
+        <!--FavoritesVC-->
+        <scene sceneID="tS2-3K-XBV">
+            <objects>
+                <viewController id="7RW-fW-qHH" customClass="FavoritesVC" customModule="PhotoPersistenceLab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h9X-9b-8xi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qxG-rl-Q2B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yXC-DN-1Oh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mt3-PV-YUQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2755.072463768116" y="772.76785714285711"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="vvn-vz-7Ch">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Q1s-2b-41H" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="5qR-JR-Wtt"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tix-fL-pzu">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dZi-qP-ATC" kind="relationship" relationship="viewControllers" id="rmE-XG-Wcw"/>
+                        <segue destination="fo0-aq-pEA" kind="relationship" relationship="viewControllers" id="Abo-tQ-osL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sb0-LF-qY4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="482"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="cHu-xL-nKe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dZi-qP-ATC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="Nn5-i2-4vG">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qfr-OO-pXZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xCH-wQ-bxe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q6s-5x-r8A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844.9275362318842" y="112.5"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="BLn-xR-ILI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fo0-aq-pEA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" selectedImage="heart" id="izZ-xQ-NPN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AC7-qF-tEQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7RW-fW-qHH" kind="relationship" relationship="rootViewController" id="v2P-Vt-8nl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UVy-9K-DTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844.9275362318842" y="772.76785714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
