@@ -80,21 +80,69 @@
             </objects>
             <point key="canvasLocation" x="2755.072463768116" y="112.5"/>
         </scene>
-        <!--Selected PhotoVC-->
+        <!--Selected PhotoDVC-->
         <scene sceneID="qGd-i8-eS0">
             <objects>
-                <viewController id="1aF-za-f9d" customClass="SelectedPhotoVC" customModule="PhotoPersistenceLab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1aF-za-f9d" customClass="SelectedPhotoDVC" customModule="PhotoPersistenceLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SXv-XD-L67">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ia8-5c-yUQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="316"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="316" id="Gbv-FZ-oif"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqW-AW-Pw9">
+                                <rect key="frame" x="20" y="477" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lK-Ss-AMn">
+                                <rect key="frame" x="364" y="424" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="W03-Fu-edV"/>
+                                    <constraint firstAttribute="width" constant="30" id="fcz-dj-58U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" image="heart" catalog="system"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swZ-Wz-aYT">
+                                <rect key="frame" x="20" y="419" width="324" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="swZ-Wz-aYT" firstAttribute="top" secondItem="ia8-5c-yUQ" secondAttribute="bottom" constant="15" id="2eT-GI-DB4"/>
+                            <constraint firstItem="IqW-AW-Pw9" firstAttribute="top" secondItem="4lK-Ss-AMn" secondAttribute="bottom" constant="23" id="2ea-mA-wHa"/>
+                            <constraint firstItem="swZ-Wz-aYT" firstAttribute="leading" secondItem="sfH-AP-o2K" secondAttribute="leading" constant="20" id="8Ia-e5-xSN"/>
+                            <constraint firstItem="4lK-Ss-AMn" firstAttribute="leading" secondItem="swZ-Wz-aYT" secondAttribute="trailing" constant="20" id="FHa-5Q-apj"/>
+                            <constraint firstItem="ia8-5c-yUQ" firstAttribute="leading" secondItem="SXv-XD-L67" secondAttribute="leading" id="HSf-uo-EPD"/>
+                            <constraint firstItem="sfH-AP-o2K" firstAttribute="trailing" secondItem="4lK-Ss-AMn" secondAttribute="trailing" constant="20" id="Npt-Sx-FjF"/>
+                            <constraint firstItem="sfH-AP-o2K" firstAttribute="trailing" secondItem="IqW-AW-Pw9" secondAttribute="trailing" constant="20" id="TEK-4b-Lcw"/>
+                            <constraint firstItem="ia8-5c-yUQ" firstAttribute="top" secondItem="sfH-AP-o2K" secondAttribute="top" id="Uqe-5s-cbg"/>
+                            <constraint firstItem="4lK-Ss-AMn" firstAttribute="top" secondItem="ia8-5c-yUQ" secondAttribute="bottom" constant="20" id="WXR-0m-5KG"/>
+                            <constraint firstItem="IqW-AW-Pw9" firstAttribute="leading" secondItem="sfH-AP-o2K" secondAttribute="leading" constant="20" id="ZCr-j9-UQd"/>
+                            <constraint firstItem="ia8-5c-yUQ" firstAttribute="trailing" secondItem="sfH-AP-o2K" secondAttribute="trailing" id="fUd-bb-63z"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sfH-AP-o2K"/>
                     </view>
                     <navigationItem key="navigationItem" id="XJ0-Um-02d"/>
+                    <connections>
+                        <outlet property="favoriteButton" destination="4lK-Ss-AMn" id="iP7-zj-O8g"/>
+                        <outlet property="largePhoto" destination="ia8-5c-yUQ" id="Osx-nX-j4W"/>
+                        <outlet property="likesLabel" destination="swZ-Wz-aYT" id="L8r-Q6-bkI"/>
+                        <outlet property="photoTags" destination="IqW-AW-Pw9" id="ugv-YV-P3M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuq-dz-rhD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3836" y="392"/>
+            <point key="canvasLocation" x="3834.7826086956525" y="391.74107142857139"/>
         </scene>
         <!--FavoritesVC-->
         <scene sceneID="tS2-3K-XBV">

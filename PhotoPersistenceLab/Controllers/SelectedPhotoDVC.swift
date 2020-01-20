@@ -9,7 +9,14 @@
 import UIKit
 
 class SelectedPhotoDVC: UIViewController {
-
+    @IBOutlet weak var largePhoto: UIImageView!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var photoTags: UILabel!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

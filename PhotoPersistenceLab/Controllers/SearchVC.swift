@@ -28,14 +28,14 @@ class SearchVC: UIViewController {
         searchBar.delegate = self
         searchPhoto(search: searchQuery)
     }
-
+    
     func searchPhoto(search: String) {
         PhotosAPIClient.getPhotos(with: search) {[weak self] (result) in
             switch result {
-                case .failure(let appError):
-                    print("app error: \(appError)")
-                case .success(let data):
-                    self?.photos = data
+            case .failure(let appError):
+                print("app error: \(appError)")
+            case .success(let data):
+                self?.photos = data
             }
         }
     }
