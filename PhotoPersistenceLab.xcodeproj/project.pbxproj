@@ -23,6 +23,7 @@
 		6397AA1423D615F400F28EB7 /* DetailedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397AA1323D615F400F28EB7 /* DetailedPhotoCell.swift */; };
 		6397AA1823D6379F00F28EB7 /* DetailedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397AA1723D6379F00F28EB7 /* DetailedCollectionViewCell.swift */; };
 		6397AA1A23D6427C00F28EB7 /* PersistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397AA1923D6427C00F28EB7 /* PersistanceHelper.swift */; };
+		6397AA4E23D6C97800F28EB7 /* FileManager+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6397AA4D23D6C97800F28EB7 /* FileManager+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		6397AA1323D615F400F28EB7 /* DetailedPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedPhotoCell.swift; sourceTree = "<group>"; };
 		6397AA1723D6379F00F28EB7 /* DetailedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCollectionViewCell.swift; sourceTree = "<group>"; };
 		6397AA1923D6427C00F28EB7 /* PersistanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceHelper.swift; sourceTree = "<group>"; };
+		6397AA4D23D6C97800F28EB7 /* FileManager+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				6397AA0923D54B3900F28EB7 /* Photos.swift */,
 				6397AA0C23D54D1500F28EB7 /* PhotosAPIClient.swift */,
 				6397AA1923D6427C00F28EB7 /* PersistanceHelper.swift */,
+				6397AA4D23D6C97800F28EB7 /* FileManager+Extensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				6397AA0423D5451D00F28EB7 /* SelectedPhotoDVC.swift in Sources */,
 				636C891923D5057E007D356F /* SearchVC.swift in Sources */,
 				6397AA1A23D6427C00F28EB7 /* PersistanceHelper.swift in Sources */,
+				6397AA4E23D6C97800F28EB7 /* FileManager+Extensions.swift in Sources */,
 				6397AA1823D6379F00F28EB7 /* DetailedCollectionViewCell.swift in Sources */,
 				6397AA1023D54E5D00F28EB7 /* PhotoCell.swift in Sources */,
 				636C891523D5057E007D356F /* AppDelegate.swift in Sources */,
