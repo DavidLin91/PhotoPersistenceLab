@@ -17,7 +17,9 @@ extension FileManager {
     }
     
     // documents/schedules.plist "schedules.plist"
+    // appends to documentdirectory (adding and persisting data)
+    
     static func pathToDocumentsDirectory(with filename: String) -> URL {
         return getDocumentsDirectory().appendingPathComponent(filename)
     }
-}
+} 

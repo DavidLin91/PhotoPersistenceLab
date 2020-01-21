@@ -20,7 +20,11 @@ class SearchVC: UIViewController {
         }
     }
     
-    var searchQuery = "sushi"
+    var searchQuery = "dog" {
+        didSet {
+            searchPhoto(search: searchQuery)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +51,7 @@ class SearchVC: UIViewController {
         }
         let photo = photos[indexPath.row]
         detailedSearchVC.detailedPhoto = photo
+        detailedSearchVC.searchQueryDVC = searchQuery
     }
     
     
